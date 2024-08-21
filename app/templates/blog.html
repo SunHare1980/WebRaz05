@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Простой блог</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Веб-приложение на Flask</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="title">Имя:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+             <div class="form-group">
+                <label for="age">Возраст:</label>
+                <input type="text" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Хобби:</label>
+                <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить данные</button>
+        </form>
+        <hr>
+        <h2>Карточки:</h2>
+
+
+
+
+<div class = "container overflow-hidden">
+    <div class = "row g-5">
+        {% for post in posts %}
+        <div class = "col-sm-12 col-md-6 col-lg-4">
+            <div class="card mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Имя: {{ post.title }}</h5>
+                         <p class="card-text">Возраст: {{ post.age }}</p>
+                         <p class="card-text">Город: {{ post.city }}</p>
+                         <p class="card-text">Хобби: {{ post.content  }}</p>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
